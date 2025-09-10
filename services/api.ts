@@ -1,5 +1,5 @@
 export const TMDB_CONFIG = {
-    BASE_URL: "https://api.themoviedb.org/3/",
+    BASE_URL: "https://api.themoviedb.org/3",
     API_KEY: process.env.EXPO_PUBLIC_MOVIE_API_KEY,
     HEADERS: {
         accept: "application/json",
@@ -21,7 +21,7 @@ export const fetchMovies = async ({query}: {query: string}) => {
         headers: TMDB_CONFIG.HEADERS,
     });
 
-    if(response.ok){
+    if(!response.ok){
         // @ts-ignore
         throw new Error("Failed to fetch movies", response.statusText);
     }
