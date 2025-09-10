@@ -15,6 +15,7 @@ export const fetchMovies = async ({query}: {query: string}) => {
 
     // added TMDB_CONFIG.BASE_URL beacuse we wanna just change the endpoint. Depending on if we have a query or not 
 
+    // API-response
     const response = await fetch(endpoint, {
         method: "GET",
         headers: TMDB_CONFIG.HEADERS,
